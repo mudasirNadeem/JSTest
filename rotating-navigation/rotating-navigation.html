@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rotating-navigation.css">
+    <script src="https://kit.fontawesome.com/cc00d27b50.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body>
+    <div class="circle-container">
+        <div class="circle">
+            <button id="close" class="fs-3" onclick="navigationshow()">
+                <i class="fas fa-bars"></i>
+            </button>
+    
+        </div>
+    </div>
+
+    <nav>
+        <div class="nav-items d-flex flex-column justify-content-between position-fixed bottom-0 custom-tansition left-100" id="navigationShow" >
+            <div></div>
+      <ul>
+        <li>
+            <a href="#" class="text-dark text-decoration-none text-white">Home</a>
+        </li>
+        <li>
+            <a href="#" class="text-dark text-decoration-none text-white"> About</a>
+        </li>
+        <li>
+            <a href="#" class="text-dark text-decoration-none text-white"> Contact</a>
+        </li>
+      </ul>
+        </div>
+    </nav>
+    <div class="section" id="section">
+ 
+    <div class="max-w-1200 bg-white">
+        <h3 class="mb-0">Amazing Article</h3>
+        <label class="ms-2 text-style-itlic">Florin Pop</label>
+        <p class="mt-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium quia in ratione dolores cupiditate, maxime aliquid impedit dolorem nam dolor omnis atque fuga labore modi veritatis porro laborum minus, illo, maiores recusandae cumque ipsa quos. Tenetur, consequuntur mollitia labore pariatur sunt quia harum aut. Eum maxime dolorem provident natus veritatis molestiae cumque quod voluptates ab non, tempore cupiditate? Voluptatem, molestias culpa. Corrupti, laudantium iure aliquam rerum sint nam quas dolor dignissimos in error placeat quae temporibus minus optio eum soluta cupiditate! Cupiditate saepe voluptates laudantium. Ducimus consequuntur perferendis consequatur nobis exercitationem molestias fugiat commodi omnis. Asperiores quia tenetur nemo ipsa.            </p>
+        <h5>My Dog</h5>
+        <img src="../toggle-image/orange-back.JPG" alt="" class="w-100 mt-5">
+        <p class="mt-5 mb-0">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sit libero deleniti rerum quo, incidunt vel consequatur culpa ullam. Magnam facere earum unde harum. Ea culpa veritatis magnam at aliquid. Perferendis totam placeat molestias illo laudantium? Minus id minima doloribus dolorum fugit deserunt qui vero voluptas, ut quia cum amet temporibus veniam ad ea ab perspiciatis, enim accusamus asperiores explicabo provident. Voluptates sint, neque fuga cum illum, tempore autem maxime similique laborum odio, magnam esse. Aperiam?
+        </p> 
+    </div>
+
+    </div>
+
+    <script>
+        function navigationshow(){
+            var navigatinoItems = document.getElementById('navigationShow');
+            var section = document.getElementById('section');
+            if(navigatinoItems.classList.contains('left-100')){
+                navigatinoItems.classList.remove('left-100');
+                section.classList.add('show-nav');
+
+            }
+            else{
+                navigatinoItems.classList.add('left-100');
+                section.classList.remove('show-nav');
+
+            }
+        }
+    </script>
+</body>
+</html>
