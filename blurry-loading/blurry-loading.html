@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/cc00d27b50.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    .filter{
+        background-image: url('../toggle-image/orange-back.JPG');
+        background-size: cover !important;
+        height: 100vh;
+        width: 100%;
+    }
+    .left-50{
+        left: 50%;
+    }
+</style>
+<body>
+    <div class="container-full">
+        <div class="filter" id="filter" style="filter: blur(100px);">
+        
+        </div>
+        <div class="increment position-fixed top-50 left-50" style="z-index: 55; font-size: 50px;">
+            <span id="pecntage-value"></span>
+        </div>
+    </div>
+<script>
+    var  filterIdElement =  document.getElementById('filter');
+    var pecntageValue = document.getElementById('pecntage-value');
+    for(var i = 100; i >= 0; i--){
+        task(i);
+}
+function task(i) { 
+setTimeout(function() { 
+    blurFun();
+    if(i == '100'){
+        pecntageValue.innerText = ``;
+    }
+    else{
+        pecntageValue.innerText = `${i}%`;
+    }
+    
+}, 100 * i); 
+} 
+
+var blueVlue = 100;
+function blurFun(){
+    var blurIContainerValue = blueVlue;
+    filterIdElement.style.filter = `blur(${blurIContainerValue}px)`;
+    blueVlue--;
+}
+
+</script>
+</body>
+</html>
