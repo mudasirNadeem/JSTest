@@ -1,0 +1,30 @@
+.container-1{
+    background-image:url('https://50projects50days.com/projects/split-landing-page/ps.jpg');
+    background-size:cover;
+}
+
+.container-2{
+    background-image:url('https://50projects50days.com/projects/split-landing-page/xbox.jpg');
+    background-size:cover;
+}
+.w-50{
+    width:50%;
+    transition: .5s !important;
+
+}
+.w-70{
+    width:70% !important;
+    transition: .5s;
+}
+.w-30{
+    width:30%  !important;
+    transition: 0.5s;
+}
+.container-1:hover{
+    width: 70% !important;
+    transition: 0.5s !important;
+}
+.container-1:hover ~ .container-2{
+    width: 30% !important;
+    transition: 0.5s !important;
+}
