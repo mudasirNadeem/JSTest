@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+<style>
+    body {
+    background-image: linear-gradient(to bottom, #eafbff 0%, #eafbff 50%, #5290f9 50%, #5290f9 100%);
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+.line{
+    background-color: #5290f9;
+    height: 2px;
+    width: 20px;
+    transition: transform 0.6s linear;
+}
+.line:first-child{
+    background-color: #5290f9;
+    height: 2px;
+    width: 20px;
+    transition: transform 0.6s linear;
+    margin-bottom: 6px;
+}
+
+.w-40{
+    width: 40px;
+    transition: 1s;
+
+}
+.active{
+     width: 400px;
+     transition: 1s;
+}
+.ps-8{
+    padding-left: 4rem !important;
+}
+.opacity-1{
+    opacity: 1;
+    transition: 1.8s;
+}
+.opacity-0{
+    opacity: 0;
+    transition: 1.8s;
+}
+nav.active .icon .line2 {
+    transform: rotate(765deg) translateY(-5.5px);
+}
+nav.active .icon .line1 {
+    transform: rotate(-765deg) translateY(5.5px);
+}
+</style>
+<body>
+    <nav class="active card py-4 ps-4 d-flex align-items-center flex-row w-40 justify-content-between" id="nav">
+        <ul class="m-0 p-0 opacity-1 d-flex flex-nowrap" id="order-list">
+          <li class="d-inline-block"><a href="#" class="text-decoration-none pe-3 text-dark">Home</a></li>
+          <li class="d-inline-block"><a href="#" class="text-decoration-none px-3 text-dark">Works</a></li>
+          <li class="d-inline-block"><a href="#" class="text-decoration-none px-3 text-dark">About</a></li>
+          <li class="d-inline-block"><a href="#" class="text-decoration-none ps-3 text-dark">Contact</a></li>
+        </ul>
+        <button class="icon border-0 bg-transparent" id="toggle" onclick="toggle()" style="position: absolute; right:15px;">
+          <div class="line line1"></div>
+          <div class="line line2"></div>
+        </button>
+      </nav>
+
+      <script>
+
+        function toggle(){
+            const nav = document.getElementById('nav');
+            const orderList = document.getElementById('order-list');
+            if(true){
+                nav.classList.toggle('active');
+                nav.classList.toggle('ps-8');
+                orderList.classList.toggle('ps-3');
+                orderList.classList.toggle('opacity-0');
+            }
+        }   
+      </script>
+</body>
+</html>
