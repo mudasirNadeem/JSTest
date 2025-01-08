@@ -37,3 +37,12 @@ body {
   background-size: cover;
   background-image: url("https://images.unsplash.com/photo-1510942201312-84e7962f6dbb?ixlib=rb-0.3.5&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;s=da4ca7a78004349f1b63f257e50e4360&amp;auto=format&amp;fit=crop&amp;w=1050&amp;q=80");
 }
+
+.mtn-100{
+  margin-top: -100vh;
+  transition: .10;
+}
+.mt-0{
+  margin-top: 0vh;
+  transition: .10;
+}
