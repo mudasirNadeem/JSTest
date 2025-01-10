@@ -1,0 +1,68 @@
+
+body {
+    background-color: #2d2463;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem;
+    justify-content: center;
+}
+
+.search-container {
+    width: 100%;
+    max-width: 800px;
+    margin-bottom: 2rem;
+}
+
+.search-input {
+    background-color: #4b367c;
+    border: none;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+.search-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.search-input:focus {
+    background-color: #4b367c;
+    color: white;
+    box-shadow: none;
+}
+
+.profile-card {
+    background-color: #4b367c;
+    border-radius: 15px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 800px;
+    min-width: 600px;
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.stats {
+    color: white;
+    font-size: 0.9rem;
+}
+
+.repo-tag {
+    background-color: #2d2463;
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    display: inline-block;
+    font-size: 0.9rem;
+}
+#result{
+    color: white;
+}
