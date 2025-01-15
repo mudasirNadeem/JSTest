@@ -8,14 +8,6 @@ function loadAllTasks() {
     saveId = JSON.parse(localStorage.getItem("id")) || 0;
     index = saveId + 1; 
     cardContainer.innerHTML = localStorageItems;
-    var descriptionElement = document.querySelectorAll('textarea');
-    descriptionElement.forEach( items =>{
-        if(items.value){
-            var sabling = items.nextSibling.classList.add('d-none');
-            // console.log(sabling);
-            sabling.innerText = items.innerText;
-        }
-    });
 }
 
 function addCard() {
@@ -28,7 +20,7 @@ function addCard() {
                 <i class="fas fa-trash" onclick="deleteFun(${idIndex})"></i>
             </div>
             <div class="note-content" id="note-content-${idIndex}" style="height:200px;">
-                <textarea class="note-textarea" placeholder="Type your note here..." id="textarea-note-tetarea-text-${idIndex}" oninput="handleInput(${idIndex})"></textarea>
+                <textarea class="note-textarea" placeholder="Type your note here..." id="textarea-note-tetarea-text-${idIndex}"></textarea>
                 <p id="description-${idIndex}"></p>
             </div>
         </div>
@@ -42,12 +34,6 @@ function addCard() {
      var removeElement = document.getElementById(id);
      removeElement.remove();
      localStorage.setItem("task", JSON.stringify(cardContainer.innerHTML));
-    }
-    function handleInput(id) {
-        var textareaIdGetting = document.getElementById(`textarea-note-tetarea-text-${id}`);
-        var textContant = document.getElementById(`description-${id}`);
-        textContant.innerText = textareaIdGetting.value;
-        localStorage.setItem("task", JSON.stringify(cardContainer.innerHTML));
     }
     function exitTexteara(id){
         var textareaIdGetting = document.getElementById(`textarea-note-tetarea-text-${id}`);
