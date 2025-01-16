@@ -40,11 +40,11 @@ function addCard() {
         var textContant = document.getElementById(`description-${id}`);
         textareaIdGetting.classList.toggle('d-none');
         if(textareaIdGetting.value){
-            textContant.innerText = textareaIdGetting.value;
+            textareaIdGetting.value =  textContant.innerText;
             localStorage.setItem("task", JSON.stringify(cardContainer.innerHTML));
         }
         else{
-           textareaIdGetting.value =  textContant.innerText;
+            textContant.innerText = textareaIdGetting.value;
            localStorage.setItem("task", JSON.stringify(cardContainer.innerHTML));
         }
     }
