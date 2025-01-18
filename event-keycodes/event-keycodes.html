@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div
+      class="min-vh-100 d-flex align-items-center bg-primary justify-content-center"
+    >
+      <!-- <div class="card p-4" id="pressButton" style="min-width: 250px;">
+        <strong class="text-center mb-0">Enter Any Press Button</strong>
+    </div>
+    <div class="d-flex d-none justify-content-center align-items-center" id="buttonShowCard">
+        <div class="card p-4 text-center fs-3" id="buttonName" style="min-width: 150px;">
+        </div>
+        <div class="card p-4 mx-5 text-center fs-3" id="buttonCode" style="min-width: 150px;">
+        </div>
+        <div class="card text-center fs-3 p-4" id="buttonUperCase" style="min-width: 150px;">
+        </div>
+        
+    </div> -->
+      <div class="p-4" id="insert">
+        <strong class="text-center p-4 card mb-0" style="min-width: 250px"
+          >Enter Any Press Button</strong
+        >
+      </div>
+    </div>
+    <script>
+      // var  enterButtonCard = document.getElementById('pressButton');
+      // var  buttonShowCard = document.getElementById('buttonShowCard');
+      // var  buttonName = document.getElementById('buttonName');
+      // var  buttonCode = document.getElementById('buttonCode');
+      // var  buttonUperCase = document.getElementById('buttonUperCase');
+
+      // window.addEventListener('keydown' , (e) =>{
+      //     if(e){
+      //         enterButtonCard.classList.add('d-none')  ;
+      //         buttonShowCard.classList.remove('d-none')  ;
+      //     }
+      //     buttonName.innerText = e.key
+      //     buttonCode.innerText = e.keyCode;
+      //     buttonUperCase.innerText = e.code;
+      // });
+
+      var insert = document.getElementById("insert");
+      window.addEventListener("keydown", (e) => {
+        insert.innerHTML = `
+            <div class="d-flex">
+                   <div class="card  text-center fs-3 p-4"  style="min-width: 150px;">
+                    ${e.key}
+            </div>
+               <div class="card text-center mx-5 fs-3 p-4"  style="min-width: 150px;">
+                    ${e.keyCode}
+            </div>
+
+               <div class="card text-center fs-3 p-4"  style="min-width: 150px;">
+                    ${e.code}
+            </div>
+            </div>
+            `;
+      });
+    </script>
+  </body>
+</html>
