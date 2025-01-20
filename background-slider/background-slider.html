@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="background-slider.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/cc00d27b50.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid min-vh-100 d-flex align-items-center justify-content-center image-1" id="imageContainer">
+        <div class=" d-flex flex-row border-0 align-items-center justify-content-between shadow-sm card"  style=" height: 500px;  width: 800px;">
+            <div class="arrow-left">
+                <button class="border-1 border-0 bg-transparent" onclick="arrowLeft()"><i class="fa-solid fa-arrow-left"></i></button>
+            </div>
+            <div class="image-1" id="cardImage">
+            </div>
+            <div class="arrow-right">
+                <button class="border-1 border-0 bg-transparent" onclick="arrowRight()"><i class="fa-solid fa-arrow-right"></i></button>
+
+            </div>
+        </div>
+    </div>
+    <script src="background-slider.js"></script>
+</body>
+</html>
