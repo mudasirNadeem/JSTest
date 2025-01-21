@@ -1,0 +1,70 @@
+        body {
+            background-color: black;
+            color: white;
+        }
+        
+        .form-check-label {
+            position: relative;
+            background-color: #d0d0d0;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 15px;
+            border: none;
+            width: 80px;
+            height: 40px;
+            transition: 0.5s ease-in-out; 
+        }
+        
+        .ball {
+            position: absolute;
+            top: 13%;
+            left: 5px;
+            background-color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 20px;
+            transition: 0.5s ease-in-out; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        input[type="checkbox"]:checked ~ .form-check-label {
+            background-color: #8e44ad;
+            transition: 0.5s ease-in-out; 
+        }
+        input[type="checkbox"]:not(:checked) ~ .form-check-label .ball {
+            animation: slideOff 0.5s linear forwards;
+        }
+
+        input[type="checkbox"]:checked ~ .form-check-label .ball {
+            left: 45px;
+            transition: 0.5s ease-in-out; 
+            animation: slideOn 0.5s linear forwards;
+        }
+        
+        @keyframes slideOff {
+            0% {
+                transform: translateX(0px) scale(1);
+            }
+            50% {
+                transform: translateX(0px) scale(1.2);
+            }
+            100% {
+                transform: translateX(0px) scale(1);
+            }
+            
+        }
+        @keyframes slideOn {
+            0% {
+                transform: translateX(0px) scale(1);
+            }
+            50% {
+                transform: translateX(0px) scale(1.2);
+            }
+            100% {
+                transform: translateX(0px) scale(1);
+            }
+            
+        }
