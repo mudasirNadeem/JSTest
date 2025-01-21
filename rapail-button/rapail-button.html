@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ripple button</title>
+</head>
+
+<body>
+    <style>
+        .btn {
+            padding: 12px 50px;
+            border: none;
+            border-radius: 5px;
+            background-color: #1abc9c;
+            color: #fff;
+            font-size: 18px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 6px 7px 40px -4px rgba(0, 0, 0, 0.2);
+            width: 100%;
+        }
+
+        .btn span {
+            position: absolute;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.3);
+            width: 100px;
+            height: 100px;
+            margin-top: -50px;
+            margin-left: -50px;
+            animation: ripple 2s;
+            opacity: 0;
+        }
+
+        @keyframes ripple {
+            from {
+                opacity: 1;
+                transform: scale(0);
+            }
+
+            to {
+                opacity: 0;
+                transform: scale(90);
+            }
+        }
+    </style>
+
+    <body>
+        <button class="btn">
+            Enter GeeksforGeeks
+        </button>
+   
+        <script>
+            const btn = document.querySelectorAll(".btn");
+            btn.forEach(element => {
+                  element.addEventListener('click', (e) => {
+                var spanElement = document.createElement('span')
+                spanElement.classList.add('ripple');
+                element.appendChild(spanElement);
+                let x = e.clientX - e.currentTarget.offsetLeft;
+                let y = e.clientY - e.currentTarget.offsetTop;
+                spanElement.style.left = `${x}px`;
+                spanElement.style.top = `${y}px`;
+                setTimeout(() => {
+                    spanElement.remove();
+                }, 300);
+            })
+            });
+          
+        </script>
+    </body>
+
+</html>
