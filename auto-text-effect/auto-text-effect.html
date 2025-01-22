@@ -8,11 +8,45 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="min-h-screen flex flex-col items-center justify-between py-3 bg-[yellow]">
+    <div class="min-h-screen flex flex-col items-center justify-between py-3 bg-[#e9967a]">
         <p></p>
-        <p id="text" class="text-black">dsfasdf</p>
-        <input type="number" min="1" value="1" max="10" id="range" class="border p-2 rounded">
+        <h1 id="text" class="text-black text-6xl">w</h1>
+        <input type="number" min="1" value="1" max="10" id="range" oninput="speedRangeFun()" class="border p-2 rounded">
     </div>
-    
+    <script>
+        var speedRange = 0;
+        var speed = 6000;
+        var calculateSpeed = 0;
+        var textParagraphs = document.getElementById('text');
+        var dummyText = 'e Love Programming!'
+        var  changeArry   = [...dummyText];
+        var interval;
+        var index = 0;
+      function  speedRangeFun(){
+        speedRange = parseInt(document.getElementById('range').value);
+        calculateSpeed =  speed  / speedRange;
+        clearInterval(interval);
+        
+         interval = setInterval(function() {
+            if(index < changeArry.length){
+                 textParagraphs.innerText += changeArry[index];
+                 if(changeArry[index] == ' '){
+                    var foo = document.createElement("span")
+                    foo.innerHTML = "&nbsp;";
+                    foo.style.visibility = 'hidden';
+                    textParagraphs.appendChild(foo)
+                 }
+                index++;
+            }
+            else{
+                index = 0;
+                textParagraphs.innerText = 'w';
+            }
+            
+   }, calculateSpeed);
+ 
+        }
+        speedRangeFun();
+    </script>
 </body>
 </html>
