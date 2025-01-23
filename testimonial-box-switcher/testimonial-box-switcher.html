@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<style>
+  .progress-bar {
+    animation: grow 10s linear infinite;
+    transform-origin: left;
+}
+@keyframes grow{
+  0% {
+    transform: scaleX(0);
+}
+}
+</style>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+
+    <div class="max-w-2xl bg-blue-500 text-white p-10 rounded-lg shadow-lg">
+        <div class=" mb-5 h-[4px] bg-white w-full progress-bar w-0" id="lineWidth"></div>
+      <p class="text-lg leading-relaxed mb-6 "  id="testimonial"></p>
+      <div class="flex items-center justify-center mt-10">
+        <img
+          class="w-12 h-12 rounded-full mr-4"
+          src="" id="userImage" 
+          alt="Miyah Myles"
+        />
+        <div>
+          <h3 class="font-semibold" id="userName">Miyah Myles</h3>
+          <p id="role"></p>
+        </div>
+      </div>
+    </div>
+    <script src="testimonial-box-switcher.js"></script>
+  </body>
+</html>
