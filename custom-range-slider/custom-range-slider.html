@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/dist/styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Range</title>
+</head>
+<body class="bg-gray-100 flex flex-col py-10 items-center justify-between min-h-screen">
+    <h1 class="text-2xl font-bold text-center mb-8">Custom Range Slider</h1>
+    <div class="w-full max-w-md p-6  rounded-lg">
+        
+        <div class="relative pt-6">
+            <output class="absolute top-0  -translate-x-1/2 bg-white px-5 py-1 rounded border text-sm" id="bubble">
+            </output>
+            
+            <input 
+            id="range"
+                type="range" 
+                value="40" 
+                class="w-full appearance-none bg-transparent cursor-pointer
+                    [&::-webkit-slider-runnable-track]:h-1 mt-5 
+                    [&::-webkit-slider-runnable-track]:bg-purple-600 
+                    [&::-webkit-slider-thumb]:appearance-none 
+                    [&::-webkit-slider-thumb]:h-5 
+                    [&::-webkit-slider-thumb]:w-5 
+                    [&::-webkit-slider-thumb]:rounded-full 
+                    [&::-webkit-slider-thumb]:bg-white 
+                    [&::-webkit-slider-thumb]:border-2 
+                    [&::-webkit-slider-thumb]:border-purple-600 
+                    [&::-webkit-slider-thumb]:mt-[-8px] 
+                    [&::-moz-range-track]:h-1 
+                    [&::-moz-range-track]:bg-purple-600 
+                    [&::-moz-range-thumb]:h-5 
+                    [&::-moz-range-thumb]:w-5 
+                    [&::-moz-range-thumb]:rounded-full 
+                    [&::-moz-range-thumb]:bg-white 
+                    [&::-moz-range-thumb]:border-2 
+                    [&::-moz-range-thumb]:border-purple-600"
+            />
+        </div>
+    </div>
+    <p></p>
+
+    <script>
+        var range = document.getElementById('range');
+        var bubble  = document.getElementById('bubble');
+        range.addEventListener('input' , () =>{
+            setBubble();
+        })
+        function setBubble(){
+            bubble.innerText = range.value;
+              bubble.style.left = `${range.value}%`
+        }
+        setBubble();
+    </script>
+</body>
+</html>
