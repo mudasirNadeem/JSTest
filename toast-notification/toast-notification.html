@@ -1,0 +1,64 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Notification Popup</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+  <div class="flex justify-center items-center h-screen bg-purple-600">
+    <div class=" rounded-lg p-6 w-80">
+      <button id="showNotification" class="bg-white  font-bold py-3 px-7 text-purple-600 rounded " onclick="addNotification()">
+        Show Notification
+      </button>
+    </div>
+    <div class="fixed bottom-0 right-[10px] overflow-hidden w-[200px]" id="notifcation-container"></div>
+  </div>
+  <script>
+    var notificationContainer = document.getElementById('notifcation-container');
+    var index = 0;
+    var colorIndex = 1;
+    function addNotification(){
+      if(colorIndex == 1){
+        notificationContainer.innerHTML += `
+        <div class="bg-white rounded-lg my-2 px-6 py-3 shadow-md" id="${index}">
+          <p class="text-purple-600 text-center d-block text-secondary font-medium">Message One</p>
+          </div>`;
+        }
+        else if(colorIndex == 2){
+        notificationContainer.innerHTML += `
+        <div class="bg-white rounded-lg my-2 px-6 py-3 shadow-md" id="${index}">
+          <p class="text-yellow-400 text-center d-block  font-medium">Message Two</p>
+          </div>`;
+        }
+        else if(colorIndex == 3){
+        notificationContainer.innerHTML += `
+        <div class="bg-white rounded-lg my-2 px-6 py-3 shadow-md" id="${index}">
+          <p class="text-purple-600 text-center d-block  font-medium">Message Three</p>
+          </div>`;
+        }
+        else{
+          notificationContainer.innerHTML += `
+        <div class="bg-white rounded-lg my-2 px-6 py-3 shadow-md" id="${index}">
+          <p class=" text-center d-block text-secondary font-medium">Message One</p>
+          </div>`;
+          colorIndex = 1;
+        }
+        colorIndex++
+        index++;
+      }
+
+      setInterval(() => {
+        if(index == 0){
+          clearInterval()
+        }
+        else{
+
+          var id = document.getElementById(index - 1);
+          id.remove();
+          index--;
+        }
+        }, 600);
+  </script>
+</body>
+</html>
